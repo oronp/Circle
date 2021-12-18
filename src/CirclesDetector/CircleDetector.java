@@ -3,17 +3,36 @@ package CirclesDetector;
 public class CircleDetector {
     public static void main(String args[]){
         char[][] matrix = {{1,2,3,4,5},{1,2,3,4,5},{1,2,'a',4,5}};
-        //System.out.println(NoNeighbours(matrix,2,2));
-        System.out.println(Find_Circles(matrix));
+
     }
 
-    public static String Find_Circles(char[][] Array){
-        boolean[][] marked = new boolean[Array.length][Array[0].length];
-        System.out.println(marked[2][1]);
-        marked[2][1] = true;
-        System.out.println(marked[2][1]);
+    public static String Find_Circles(char[][] array){
+        boolean[][] marked = new boolean[array.length][array[0].length];
+        int numOfRows = array.length;
+        int numOfCols = array[0].length;
+        for(int i = 1; i < numOfRows; i++){
+            for(int j = 1; j < numOfCols; j++){
+                if(!NoNeighbours(array,i,j)){
+                    if(ColSus(array,i) == true){
+
+                    }
+                }
+            }
+        }
         return "a";
     }
+
+    public static int RowSus(char[] array,int correntCol){
+        return 1;
+    }//return the radius.
+
+    public static boolean ColSus(char[][] array,int correntRow){
+        return true;
+    }//return if the radius is right for the collumn too.
+
+    public static boolean Crosses(char[][] array,int correntRow,int correntCol,int size){
+        return true;
+    }//checks the whole frame of the circle.
 
     public static boolean NoNeighbours(char[][] Arr, int row, int col){
         int numOfRows = Arr.length;
